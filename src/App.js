@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import PostList from "./components/PostList/PostList";
+import CreatePostForm from "./components/Create-post-form/CreatePostForm";
+import {useState} from "react";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    const [posts, setPosts] = useState([
+        {
+            id: 'sghdt',
+            title: 'Title',
+            description: "lorem10 wfswf  jwwtsg",
+            high: true
+        }
+    ])
+    const highCount = posts.filter((post)=>post.high)
+
+
+    return (
+        <>
+            <div className="App">
+                <div>
+                        <PostList
+                            posts={posts}
+                            setPosts={setPosts}
+                        />
+                </div>
+
+                <CreatePostForm
+                    posts={posts}
+                    setPosts={setPosts}
+                />
+            </div>
+            <p className="count">Count - {posts.length}</p>
+            <p className="countHigh"> High - {highCount.length}</p>
+
+        </>
   );
 }
 

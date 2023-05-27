@@ -1,0 +1,73 @@
+body{
+  background-color: #94c9c9;
+}
+
+.App{
+  display: flex;
+  &>div:first-child{
+    width: 70%;
+  }
+  .form{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    margin: 20px;
+    button{
+      width: 100px;
+      padding: 5px;
+      color: white;
+      background-color: green;
+      border-radius: 15px;
+      cursor: pointer;
+    }
+    textarea{
+      height: 70px;
+      margin: 20px 0;
+    }
+  }
+}
+
+.contDIv{
+  display: flex;
+  flex-wrap: wrap;
+  &>div{
+    width: 25%;
+    margin: 20px;
+    border: 1px solid black;
+    padding: 12px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 3px 1px #423c3c;
+    background-color: lightblue;
+    color: #0171c1;
+    text-transform: capitalize;
+    div{
+      display: flex;
+      justify-content: space-between;
+      .circle{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: red;
+      }
+    }
+  }
+}
+
+.deletePost{
+  cursor: pointer;
+  color: darkred;
+  font-size: 20px;
+}
+
+.count{
+  margin-left: 20px;
+  font-size: 25px;
+  color: #0171c1;
+}
+
+.countHigh{
+  font-size: 25px;
+  color: red;
+  margin-left: 20px;
+}
