@@ -2,9 +2,9 @@ import {useState} from "react";
 import AllPosts from "../AllPosts/AllPosts";
 import FilteredPosts from "../FiltredPosts/FiltredPosts";
 
-function PostList({posts, setPosts}) {
+function PostList({posts, setPosts,handleOpen,setIdToDeletePost,setFilterPost,filterPost}) {
 
-    const [filterPost, setFilterPost] = useState([])
+
     const [checked, setChecked] = useState(false)
 
     const deletePost = (id) => {
@@ -27,9 +27,9 @@ function PostList({posts, setPosts}) {
             <div className='contDIv'>
                 {
                     checked ?
-                            <FilteredPosts deletePost={deletePost} filterPost={filterPost}/>
+                            <FilteredPosts handleOpen={handleOpen} setIdToDeletePost={setIdToDeletePost} deletePost={deletePost} filterPost={filterPost}/>
                             :
-                            <AllPosts deletePost={deletePost} posts={posts}/>
+                            <AllPosts handleOpen={handleOpen} setIdToDeletePost={setIdToDeletePost} deletePost={deletePost} posts={posts}/>
                 }
             </div>
         </>

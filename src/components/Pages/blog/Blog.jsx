@@ -1,8 +1,6 @@
-import {useState} from "react";
 import classes from "./Blog.module.scss";
-
-function Blog() {
-
+import {useState} from "react";
+const BlogPage = ()=>{
     const [high, setHigh] = useState(false);
     const [value, setValue] = useState('');
     const [description, setDescription] = useState('')
@@ -59,7 +57,7 @@ function Blog() {
 
     }
 
-    return (
+    return(
         <>
             <label>High <input checked={showHighBlogs} onClick={changeShowHighBlogs} type="checkbox"/></label>
             <div className={classes.BlogCont}>
@@ -110,4 +108,4 @@ function Blog() {
     )
 }
 
-export default Blog;
+export default BlogPage;

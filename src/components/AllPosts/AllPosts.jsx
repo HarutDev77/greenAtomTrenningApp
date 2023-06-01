@@ -1,7 +1,7 @@
 import Post from "../Post/Post";
 import EmptyState from "../UI/EmptyState";
 
-function AllPosts({posts, deletePost}) {
+function AllPosts({posts, deletePost,handleOpen,setIdToDeletePost}) {
     return (
         <>
             {
@@ -11,6 +11,8 @@ function AllPosts({posts, deletePost}) {
                                 key={post.id}
                                 post={post}
                                 deletePost={deletePost}
+                                handleOpen={handleOpen}
+                                setIdToDeletePost={setIdToDeletePost}
                             />
                         )
                     })
