@@ -1,21 +1,36 @@
-function Post({post,deletePost}) {
+import {Card, CardActionArea, CardContent, CardMedia, Typography} from "@mui/material";
+
+function Post({post,handleOpen,setIdToDeletePost}) {
+
+    const func = ()=>{
+        handleOpen();
+        setIdToDeletePost(post.id);
+    }
+
     return (
-        <div >
-            <div>
-                {
-                    post.high
-                        ?
+        <Card sx={{ maxWidth: 345 }}>
+            <CardActionArea>
+                <CardContent>
+                    <div className="cardFirstCont">
+                             {
+                                  post.high
+                                      ?
                         <p className="circle"></p>
-                        :
+                                      :
                         <div></div>
-                }
-                <h1>{post.title}</h1>
-                <p className='deletePost' onClick={()=>deletePost(post.id)}>X</p>
-            </div>
-            <p>
-                {post.description}
-            </p>
-        </div>
+                             }
+                        <Typography gutterBottom variant="h5" component="div">
+                            {post.title}
+                        </Typography>
+                               <p className='deletePost' onClick={func}>X</p>
+                             </div>
+
+                    <Typography variant="body2" color="text.secondary">
+                        {post.description}
+                    </Typography>
+                </CardContent>
+            </CardActionArea>
+        </Card>
     )
 }
 
